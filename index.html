@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スパイダーソリティア</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>🕷️ スパイダーソリティア</h1>
+    <div class="controls">
+      <label class="difficulty">
+        スート数:
+        <select id="suitSelect">
+          <option value="1">1種（やさしい）</option>
+          <option value="2" selected>2種（ふつう）</option>
+          <option value="4">4種（むずかしい）</option>
+        </select>
+      </label>
+      <button id="newGameBtn">新しいゲーム</button>
+      <button id="undoBtn" title="一手戻す">↩ 戻す</button>
+      <button id="hintBtn" title="ヒント">💡 ヒント</button>
+      <button id="soundBtn" title="効果音の切り替え">🔊 音 ON</button>
+    </div>
+    <div class="stats">
+      <span>得点: <b id="score">500</b></span>
+      <span>手数: <b id="moves">0</b></span>
+      <span>完成: <b id="completed">0</b>/8</span>
+      <span>山札: <b id="stockCount">5</b></span>
+    </div>
+  </header>
+
+  <main id="board" class="board"></main>
+
+  <div id="stockArea" class="stock-area" title="クリックで配る">
+    <div id="stockPile" class="stock-pile"></div>
+  </div>
+
+  <div id="winOverlay" class="overlay hidden">
+    <div class="overlay-card">
+      <h2>🎉 クリア！</h2>
+      <p id="winText"></p>
+      <button id="winNewGameBtn">もう一度遊ぶ</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
